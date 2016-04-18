@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_material_common" />
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- <android.support.design.widget.AppBarLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+             <android.support.v7.widget.Toolbar
+                 android:id="@+id/id_toolbar_md_projectmapdata_preview"
+                 android:layout_width="match_parent"
+                 android:layout_height="?attr/actionBarSize"
+                 app:layout_scrollFlags="scroll|enterAlways"
+                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+
+        <!--  &lt;!&ndash;点位和线条数信息&ndash;&gt;
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:minHeight="20dp"
+              android:orientation="horizontal"
+              app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:orientation="horizontal">
+
+                  <android.support.v7.widget.AppCompatTextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/string_project_points" />
+
+                  <android.support.v7.widget.AppCompatTextView
+                      android:id="@+id/id_textview_numofpoints"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" />
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:orientation="horizontal">
+
+                  <android.support.v7.widget.AppCompatTextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/string_project_lines" />
+
+                  <android.support.v7.widget.AppCompatTextView
+                      android:id="@+id/id_textview_numoflines"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content" />
+              </LinearLayout>
+          </LinearLayout>-->
+        <!--    </android.support.design.widget.AppBarLayout>-->
+
+        <com.hz.view.SuperRecyclerView
+            android:id="@+id/id_recyclerview_projectgallerylist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyView="@+id/id_recyclerview_emptyview"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <RelativeLayout
+            android:id="@+id/id_recyclerview_emptyview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="200dp">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/id_emptyview_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ic_emptyview_background"
+                    android:src="@drawable/no_image" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/id_emptyview_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/string_image_nothave_data"
+                    android:textAlignment="center" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

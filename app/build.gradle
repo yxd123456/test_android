@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.hz"
+        minSdkVersion 18
+        targetSdkVersion 21
+        versionCode 312
+        versionName "3.1.3"
+        multiDexEnabled false
+    }
+
+    // java版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    //签名文件配置
+    signingConfigs {
+        releaseConfig {
+            keyAlias 'edap.keystore'
+            keyPassword '123456'
+            storeFile file('..//edap.keystore')
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        //开发模式
+        debug {
+            //shrinkResources true
+            //修改占位符内容
+            //多成员开发时，此mapkey需要替换为相应用户在百度api控制台申请的debug类型的mapkey
+            manifestPlaceholders = [mapKey: "oK5YcGkRTZgC5RAAsTbhNXvs"]
+        }
+        //发布版本打包模式
+        release {
+            //shrinkResources true
+            //是否进行混淆
+            minifyEnabled false
+            //混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名配置文件
+            signingConfig signingConfigs.releaseConfig
+            //移除无用的资源文件
+            //shrinkResources true
+            //修改占位符内容
+            manifestPlaceholders = [mapKey: "oVmwGu9ILFWH9njXsopRzj4G"]
+        }
+    }
+
+    //排除打包的文件
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    // This is important, it will run lint checks but won't abort build
+    lintOptions {
+        abortOnError false
+    }
+
+    // rename the apk with the version name
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(
+                    output.outputFile.parent,
+                    "edap-${variant.buildType.name}-${variant.versionName}.apk".toLowerCase())
+
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'de.greenrobot:greendao:2.0.0'
+    compile 'de.greenrobot:greendao-generator:2.0.0'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.5.4'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.5.4'
+    compile 'commons-io:commons-io:2.4'
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/jpush-sdk-release1.7.5.jar')
+    compile 'com.android.support:support-annotations:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:support-v13:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:palette-v7:23.1.1'
+    compile 'com.android.support:cardview-v7:23.1.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.umeng.analytics:analytics:5.6.4'
+    compile files('libs/xUtils-2.6.2.jar')
+}
+

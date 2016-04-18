@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/id_imageview_leftimage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/id_textview_prosynctime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/id_button_syncmateriel"
+        android:layout_alignTop="@id/id_imageview_leftimage"
+        android:alpha="0.5"
+        android:singleLine="true"
+        android:text="2014-03-24"
+        android:textSize="9sp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/id_textview_materielname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_textview_prosynctime"
+        android:layout_toRightOf="@id/id_imageview_leftimage"
+        android:singleLine="true"
+        android:text="杆塔形式"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/id_textview_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_textview_materielname"
+        android:layout_toRightOf="@id/id_imageview_leftimage"
+        android:singleLine="true"
+        android:text="155"
+        android:textSize="14sp" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/id_button_syncmateriel"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/id_textview_prosynctime"
+        android:layout_marginRight="10dp"
+        android:background="@color/content_background_color"
+        android:focusable="false"
+        android:text="@string/string_button_syncmateriel"
+        android:textColor="?attr/colorAccent"
+        android:textSize="14sp" />
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/id_textview_parent_textname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:text="湖北省"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <com.hz.view.ExpandDirectionView
+        android:id="@+id/id_imageview_parent_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp" />
+
+    <View
+        android:id="@+id/id_seperate_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignLeft="@id/id_textview_parent_textname"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/id_imageview_parent_icon"
+        android:background="@color/view_seperator_color" />
+</RelativeLayout>

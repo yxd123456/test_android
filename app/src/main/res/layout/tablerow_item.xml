@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center">
+
+    <com.hz.view.ValidaterEditText
+        android:id="@+id/id_edit_electriccable_itemmode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:inputType="none"
+        android:singleLine="true"
+        app:validateNotContactSpecialCharactor="false"
+        app:validateNoteBlank="true" />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/id_edit_spinner_linewiretype"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/string_edit_linewiretype" />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/id_edit_spinner_linestatus"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/string_edit_linestatus" />
+
+    <com.hz.view.ValidaterEditText
+        android:id="@+id/id_edittext_itemnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxWidth="100dp"
+        android:minWidth="50dp"
+        android:singleLine="true"
+        android:text="@string/string_num_one"
+        app:validateNotMinIs1="true"
+        app:validateNotNumToLong="true"
+        app:validateNoteBlank="true" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/id_tablerow_deleterow"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="@string/string_deleterow"
+        android:textColor="@color/red" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/id_textview_hide_row_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+</TableRow>

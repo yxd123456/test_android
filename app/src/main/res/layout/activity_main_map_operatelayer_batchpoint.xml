@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/map_operate_icon_background_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="horizontal">
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/id_button_addcancel5"
+        style="@style/white_button_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/string_addcancel_batchpoint"
+        android:textColor="@color/red" />
+
+</LinearLayout>

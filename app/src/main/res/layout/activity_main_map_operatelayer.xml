@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--地图控制按钮-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/id_edit_choose_bar"
+        android:animateLayoutChanges="true">
+
+        <include layout="@layout/activity_main_map_operatelayer_controller" />
+    </FrameLayout>
+
+
+    <!--下侧隐藏工具条-->
+    <FrameLayout
+        android:id="@+id/id_edit_choose_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:animateLayoutChanges="true"
+        android:padding="0dp">
+
+        <!--新增跨越线 工具条-->
+        <FrameLayout
+            android:id="@+id/id_edit_line_choose"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:visibility="gone">
+
+            <include layout="@layout/activity_main_map_operatelayer_crossline" />
+        </FrameLayout>
+
+
+        <!--新增点位 工具条-->
+        <FrameLayout
+            android:id="@+id/id_edit_point_choose"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:visibility="gone">
+
+            <include layout="@layout/activity_main_map_operatelayer_point" />
+        </FrameLayout>
+
+        <!--导线电缆 连线 工具条-->
+        <FrameLayout
+            android:id="@+id/id_edit_connectline"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:visibility="gone">
+
+            <include layout="@layout/activity_main_map_operatelayer_line" />
+        </FrameLayout>
+
+        <!--导线电缆 批量连线 工具条-->
+        <FrameLayout
+            android:id="@+id/id_edit_batchconnectline"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:visibility="gone">
+
+            <include layout="@layout/activity_main_map_operatelayer_batchline" />
+        </FrameLayout>
+
+        <!--立杆 批量修改点位信息 工具条-->
+        <FrameLayout
+            android:id="@+id/id_edit_batchpoint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:visibility="gone">
+
+            <include layout="@layout/activity_main_map_operatelayer_batchpoint" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+</merge>

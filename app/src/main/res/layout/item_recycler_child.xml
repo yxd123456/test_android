@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="7dp"
+        android:layout_toLeftOf="@+id/id_button_child_download"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/id_textview_child_textname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="襄阳"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.hz.view.DownLoadIndicator
+                android:id="@+id/id_child_download_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/id_textview_child_textsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:singleLine="true"
+                android:text="地图20M"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/id_button_child_download"
+        style="@style/button_status_style"
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:text="@string/string_button_localmap_download"
+        android:textColor="?attr/colorAccent" />
+
+    <View
+        android:id="@+id/id_seperate_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignLeft="@id/name"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/id_button_child_download"
+        android:background="@color/view_seperator_color" />
+
+    <com.hz.view.progressbar.NumberProgressBar
+        android:id="@+id/id_progress_child_downloading"
+        style="@style/NumberProgressBar_Default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/name"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/id_button_child_download"
+        app:progress_current="0"
+        app:progress_max="100" />
+
+</RelativeLayout>

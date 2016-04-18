@@ -1,0 +1,11 @@
+Android签名证书的sha1值获取方式有两种：
+第一种方法：使用keytool
+第1步：运行进入控制台
+第2步：定位到.android文件夹下，输入cd .android
+第3步：输入keytool -list -v -keystore debug.keystore，会得到三种指纹证书，选取SHA1类型的证书（密钥口令是android），例如：
+其中keytool为jdk自带工具；keystorefile为Android 签名证书文件
+开发时使用：debug.keystore     打包时使用：edap.keystore
+
+
+edap.keystore 位置在：C:\Users\long\.android
+密码为：123456

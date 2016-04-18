@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blackTruns">#ff404040</color>
+    <!--金黄色 -->
+    <color name="gold">#ffd700</color>
+    <!--红紫色 -->
+    <color name="red">#ff0000</color>
+    <!--黄红色 -->
+    <color name="darksalmon">#e9967a</color>
+    <!--暗灰色 -->
+    <color name="brown">#a52a2a</color>
+    <!--菊兰色 -->
+    <color name="cadetblue">#5f9ea0</color>
+    <!--中海蓝 -->
+    <color name="limegreen">#32cd32</color>
+    <!--暗瓦灰色 -->
+    <color name="darkslategrey">#2f4f4f</color>
+    <!--亮海蓝色 -->
+    <color name="dodgerblue">#1e90ff</color>
+    <!--深海蓝色 -->
+    <color name="seablue">#0288D1</color>
+    <!--蓝绿色 -->
+    <color name="bluegreen">#0E9C8F</color>
+    <!--浅绿色 -->
+    <color name="cyan">#00ffff</color>
+    <!--水鸭色 -->
+    <color name="green">#008000</color>
+    <!--海军色 -->
+    <color name="black">#000000</color>
+    <!--白色 -->
+    <color name="white">#ffffff</color>
+    <!--黑灰色 -->
+    <color name="darkgray">#a9a9a9</color>
+    <!--白灰色 -->
+    <color name="whitegray">#2a000000</color>
+
+    <!--################################自定义颜色################################-->
+    <!--自定义控件分割颜色-->
+    <color name="view_seperator_color">@color/whitegray</color>
+    <!--自定义控件边框颜色-->
+    <color name="view_border_color">@color/whitegray</color>
+    <!--系统主题背景颜色-->
+    <color name="content_background_color">@color/white</color>
+    <!--系统状态栏主色调-->
+    <color name="theme_color_primary">@color/seablue</color>
+    <!--系统状态栏主色调深色-->
+    <color name="theme_color_primary_dark">@color/seablue</color>
+    <!--自定义视图列表选中后的背景颜色-->
+    <color name="view_select_background_color">@color/whitegray</color>
+    <!--系统控件着色-->
+    <color name="blue_control_accent">@color/bluegreen</color>
+
+    <!--1，项目状态颜色  外业采集中 背景颜色  和填充颜色-->
+    <color name="project_status_undone_background">#ea7676</color>
+    <color name="project_status_undone_fillcolor">#f05757</color>
+    <!--2,项目状态颜色  外业采集完成 背景颜色  和填充颜色-->
+    <color name="project_status_hasdone_background">#e6af59</color>
+    <color name="project_status_hasdone_fillcolor">#f37740</color>
+    <!--3,项目状态颜色  外业采集中 采集数据审核完成  和填充颜色-->
+    <color name="project_status_hasaudio_background">#81c7e9</color>
+    <color name="project_status_hasaudio_fillcolor">#0e6e9d</color>
+    <!--4,项目状态颜色  采集数据材料已整理 背景颜色  和填充颜色-->
+    <color name="project_status_materialdone_background">#90ce66</color>
+    <color name="project_status_materialdone_fillcolor">#3a651d</color>
+
+</resources>

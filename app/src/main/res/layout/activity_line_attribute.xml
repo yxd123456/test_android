@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_material_common" />
+
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/white">
+
+        <!--点位相关属性选择-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+
+            <!--点位名称-->
+            <LinearLayout
+                android:id="@+id/id_linearlayout_pointname"
+                style="@style/attributeedit_item_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_edit_linename" />
+
+                <com.hz.view.ValidaterEditText
+                    android:id="@+id/id_edit_attributename"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/string_edit_linename_hint"
+                    app:validateNotTextToLong="true"
+                    app:validateNoteBlank="false" />
+            </LinearLayout>
+
+            <!--导线/电缆 间距-->
+            <LinearLayout
+                android:id="@+id/id_linearlayout_linelength"
+                style="@style/attributeedit_item_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_edit_linelength" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/id_edit_linelength"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!--电线类型-->
+            <LinearLayout
+                android:id="@+id/id_linearlayout_wiretype"
+                style="@style/attributeedit_item_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_edit_wiretype" />
+
+                <com.hz.view.ValidaterEditText
+                    android:id="@+id/id_edit_wiretype"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/string_edit_wiretype_hint"
+                    android:inputType="none"
+                    app:validateNotContactSpecialCharactor="false"
+                    app:validateNoteBlank="true" />
+            </LinearLayout>
+
+
+            <!--规格线数-->
+            <LinearLayout
+                android:id="@+id/id_linearlayout_specificationnumber"
+                style="@style/attributeedit_item_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_edit_specificationnumber" />
+
+                <com.hz.view.ValidaterEditText
+                    android:id="@+id/id_edit_specificationnumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/string_edit_specificationnumber_hint"
+                    android:inputType="number"
+                    android:text="@string/string_num_one"
+                    app:validateNotMaxIs10="true"
+                    app:validateNotMinIs1="true"
+                    app:validateNotNumToLong="true"
+                    app:validateNoteBlank="true" />
+            </LinearLayout>
+
+
+            <!--电线关联拉线或者导线信息-->
+            <LinearLayout
+                android:id="@+id/id_linearlayout_electriccable"
+                style="@style/attributeedit_item_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <TableLayout
+                    android:id="@+id/id_tablelayout_electriccable"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/id_button_addtablerow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/editAttributeAdd_line"
+                        android:textColor="@color/green" />
+                </TableLayout>
+            </LinearLayout>
+
+            <!--点位备注信息-->
+            <LinearLayout
+                android:id="@+id/id_linearlayout_pointnote"
+                style="@style/attributeedit_item_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_edit_linenote" />
+
+                <com.hz.view.ValidaterEditText
+                    android:id="@+id/id_edit_attributenote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/string_edit_linenote_hint"
+                    app:validateNotTextToLong="true" />
+            </LinearLayout>
+
+
+            <!--图片滑动组件-->
+            <LinearLayout
+                style="@style/attributeedit_item_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:animateLayoutChanges="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                android:visibility="gone">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/id_recyclerview_gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp" />
+            </LinearLayout>
+
+            <!--确定-->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:animateLayoutChanges="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/id_button_editok"
+                    style="@style/button_status_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editAttributeOk"
+                    android:textColor="?attr/colorAccent"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

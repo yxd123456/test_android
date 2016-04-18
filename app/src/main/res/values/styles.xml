@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Material Design主题-->
+    <style name="Base.AppTheme.Material" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/theme_color_primary</item>
+        <item name="colorPrimaryDark">@color/theme_color_primary_dark</item>
+        <item name="colorAccent">@color/blue_control_accent</item>
+        <item name="android:windowBackground">@color/content_background_color</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Material" parent="Base.AppTheme.Material">
+
+    </style>
+
+    <!--白色背景按钮按钮-->
+    <style name="white_button_style">
+        <item name="android:background">@drawable/white_button_style_background</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!--############################################自定义样式###################################-->
+
+    <!--按钮样式 点击后背景改变-->
+    <style name="button_status_style">
+        <item name="android:background">@drawable/button_status_style</item>
+    </style>
+
+    <!--列表item背景-->
+    <style name="attributeedit_item_style">
+        <item name="android:background">@drawable/attributeedit_style_background</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <!--进度条背景-->
+    <style name="ProgressHUD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!--视图分隔条水平-->
+    <style name="viewbar_seperate_horizontal_style">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/view_seperator_color</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <!--视图分隔条垂直-->
+    <style name="viewbar_seperate_vehicle_style">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">1dp</item>
+        <item name="android:background">@color/view_seperator_color</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <!--地图上操作图标样式-->
+    <style name="map_operate_icon_style">
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="backgroundTint">?attr/colorAccent</item>
+    </style>
+
+    <!--地图编辑bar背景-->
+    <style name="map_operate_icon_background_style">
+        <item name="android:background">@drawable/map_operate_icon_background_style</item>
+    </style>
+
+    <!--相册item背景-->
+    <style name="gallery_item_background">
+        <item name="android:background">@drawable/gallery_item_background</item>
+    </style>
+
+    <!--数据下拉选择进入退出动画-->
+    <style name="picker_listview_dialog_topin_topout_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/picker_listview_topenter_anim</item>
+        <item name="android:windowExitAnimation">@anim/picker_listview_topexit_anim</item>
+    </style>
+
+    <!--数据下拉选择进入退出动画-->
+    <style name="popupwindow_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_bottom_to_up_anim</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_up_to_bottom_anim</item>
+    </style>
+
+
+</resources>

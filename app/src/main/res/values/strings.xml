@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 项目名称 -->
+    <string name="app_name">EDA</string>
+
+    <!-- 项目首页图标名称 -->
+    <string name="string_projectmanager">点位采集</string>
+    <string name="string_projectCollect">工程信息</string>
+    <string name="string_localMap">离线地图</string>
+
+    <!-- activity标题列表 -->
+    <string name="title_activity_point_attribute">点位属性编辑</string>
+    <string name="title_dialog_picker">选择数据</string>
+    <string name="title_activity_materiel_detail">物料详细列表</string>
+    <string name="title_activity_projectList">项目列表</string>
+    <string name="title_activity_changelatlong">修改位置</string>
+    <string name="title_activity_login">登录</string>
+    <string name="title_activity_account">账户信息</string>
+    <string name="title_line_attribute">线属性编辑</string>
+
+    <!-- 项目预览按钮 -->
+    <string name="string_button_projectdatapreview">预览</string>
+
+    <!-- 项目列表设置按钮 -->
+    <string name="menu_item_selectall">全选</string>
+    <string name="menu_item_refresh">刷新</string>
+
+    <!-- 点位属性编辑删除按钮 -->
+    <string name="menu_item_remove">删除</string>
+
+    <!-- 加载进度条dialog名称 -->
+    <string name="loading">数据加载中……</string>
+
+    <!-- 设置与帮助条目列表 -->
+    <string name="string_materia_setting">物料同步</string>
+    <string name="string_map_setting">地图设置</string>
+    <string name="function_introduce">功能介绍</string>
+    <string name="help_feedback">反馈</string>
+    <string name="webcome_page">欢迎页</string>
+    <string name="about_me">关于我们</string>
+
+    <!-- 物料同步按钮名称 -->
+    <string name="string_button_syncmateriel">同步</string>
+
+    <!-- 地图点位编辑类型 -->
+    <string name="string_addcancel_point">放弃</string>
+    <string name="string_addcancel_line">放弃(连线)</string>
+    <string name="string_addcancel_crossline">放弃(跨越线)</string>
+    <string name="string_addcancel_batchline">放弃(批量连线)</string>
+    <string name="string_addcancel_batchpoint">放弃(批量修改点位)</string>
+    <!-- 点 -->
+    <string name="string_verticalwelding">立杆</string>
+    <string name="string_batchupdate_verticalwelding">立杆(批量修改)</string>
+    <string name="string_transformerchamber">变压箱</string>
+    <string name="string_doormeter">户表</string>
+    <string name="string_cablepit">电缆井</string>
+    <string name="string_boxswitchstation">箱式开关站</string>
+    <string name="string_spswitchingpost">开闭所</string>
+    <string name="string_boxtypesubstation">箱式变压站</string>
+    <!-- 线 -->
+    <string name="string_crossline">跨越线</string>
+    <string name="string_wire">导线</string>
+    <string name="string_electriccable">电缆</string>
+    <string name="string_wire_electriccable">导线/电缆</string>
+    <string name="string_batch_wire_electriccable">导线/电缆(批量添加)</string>
+
+
+    <!-- 点位图标名称 -->
+    <!-- 点 -->
+    <string name="string_icon__verticalwelding">杆</string>
+    <string name="string_icon_transformerchamber">箱</string>
+    <string name="string_icon_doormeter">户</string>
+    <string name="string_icon_cablepit">缆</string>
+    <string name="string_icon_boxswitchstation">箱</string>
+    <string name="string_icon_spswitchingpost">闭</string>
+    <string name="string_icon_boxtypesubstation">变</string>
+
+
+    <!-- 线 -->
+    <string name="string_icon_wire">导</string>
+    <string name="string_icon_electriccable">缆</string>
+
+    <!-- 点位连线 -->
+    <string name="string_textview_startpoint">开始点</string>
+    <string name="string_textview_endpoint">结束点</string>
+
+    <string name="string_line_start">设为起点</string>
+    <string name="string_line_end">设为终点</string>
+
+    <!-- 点位属性编辑名称列表 -->
+    <string name="string_edit_latitude">经度</string>
+    <string name="string_edit_longitude">纬度</string>
+    <string name="string_edit_towertype">杆塔形式</string>
+    <string name="string_edit_wiretype">线类型</string>
+    <string name="string_edit_transformer">变压器容量</string>
+    <string name="string_edit_geologicalconditions">地质情况</string>
+    <string name="string_edit_landform">地形情况</string>
+    <string name="string_edit_equipmentinstallation">设备安装</string>
+
+    <string name="string_edit_lighting">照明表</string>
+    <string name="string_edit_power">动力表</string>
+    <string name="string_edit_connectdoorlength">接户线长数</string>
+
+    <string name="string_edit_isreform">改造点位</string>
+    <string name="string_edit_pointstatus">点位状态</string>
+
+    <string name="string_isreform_true">是</string>
+    <string name="string_isreform_false">否</string>
+
+    <string name="string_pointstatus_none">不变</string>
+    <string name="string_pointstatus_new">新点位</string>
+    <string name="string_pointstatus_old">旧点位</string>
+    <string name="string_pointstatus_bali">拔立</string>
+
+    <string name="string_edit_cnductorwire">导线/电缆</string>
+    <string name="string_edit_electricpoletype">电杆型号</string>
+    <string name="string_edit_electricpoletype_num">电杆数量</string>
+    <string name="string_edit_pointname">点位名称</string>
+    <string name="string_edit_pointnum">点位杆号</string>
+    <string name="string_edit_pointnote">点位备注</string>
+    <string name="string_edit_linename">线名称</string>
+    <string name="string_edit_linelength">线长度</string>
+    <string name="string_edit_linenote">线备注</string>
+    <string name="string_edit_mylocation">点位位置</string>
+
+    <string name="string_edit_mylocation_startpoint">开始点位</string>
+    <string name="string_edit_mylocation_endpoint">结束点位</string>
+
+
+    <string name="editAttributeOk">确认</string>
+    <string name="editAttributeUpdate">修改</string>
+    <string name="editAttributeAdd">新增</string>
+    <string name="editAttributeAdd_line">添加电缆/导线</string>
+
+    <!--0:导线   1:电缆-->
+    <string-array name="string_edit_linewiretype">
+        <item>导线</item>
+        <item>电缆</item>
+    </string-array>
+
+    <!--0：新   1：旧-->
+    <string-array name="string_edit_linestatus">
+        <item>新</item>
+        <item>旧</item>
+    </string-array>
+
+    <!-- 点位属性编辑提示hint名称列表 -->
+    <string name="string_edit_towertype_hint">请选择杆塔形式</string>
+    <string name="string_edit_wiretype_hint">请选择线类型</string>
+    <string name="string_edit_transformer_hint">请选择变压器容量</string>
+    <string name="string_edit_geologicalconditions_hint">请选择地质情况</string>
+    <string name="string_edit_landform_hint">请选择地形情况</string>
+    <string name="string_edit_equipmentinstallation_hint">请选择设备安装</string>
+    <string name="string_edit_towermetal_hint">请选择塔接金具</string>
+    <string name="string_edit_electricpoletype_hint">请选择电杆型号</string>
+    <string name="string_edit_electricpoletype_count_hint">请选择电杆数量</string>
+    <string name="string_edit_pointname_hint">请输入点位名称</string>
+    <string name="string_edit_num_hint">请输入点位杆号</string>
+    <string name="string_edit_pointnote_hint">请输入点位备注</string>
+    <string name="string_edit_linename_hint">请输入线名称</string>
+    <string name="string_edit_linenote_hint">请输入线备注</string>
+
+    <string name="string_num_zero">0</string>
+    <string name="string_num_one">1</string>
+    <string name="string_deleterow">x</string>
+
+    <string name="string_edit_lighting_hint">请输入照明表个数</string>
+    <string name="string_edit_specificationnumber_hint">请输入规格线数个数</string>
+    <string name="string_edit_power_hint">请输入动力表个数</string>
+    <string name="string_edit_connectdoorlength_hint">请输入接户线长数个数</string>
+
+    <!-- pickerDialog按钮名称 -->
+    <string name="string_picker_ok">确定</string>
+    <string name="string_picker_cancel">取消</string>
+    <string name="string_picker_next">下一项</string>
+    <string name="title_activity_gallery">相册DEMO</string>
+    <string name="title_activity_imagepreview">图片预览</string>
+
+    <string name="title_activity_projectmapdata_preview">采集数据上传</string>
+
+
+    <string name="string_icon_al_start">始</string>
+    <string name="string_icon_al_end">终</string>
+
+    <string name="string_login_username">用户名</string>
+    <string name="string_login_username_hint">请输入用户名</string>
+    <string name="string_login_passwd">密码</string>
+    <string name="string_login_passwd_hint">请输入密码</string>
+    <string name="string_login_jzmm">记住密码</string>
+    <string name="string_login_autologin">自动登录</string>
+    <string name="string_login_reset">重置</string>
+    <string name="string_login_login">登   录</string>
+
+    <string name="string_home_title">首页</string>
+    <string name="string_home_materiel_sync">材料数据同步</string>
+    <string name="string_button_logout">退出登录</string>
+    <string name="string_nothave_data">没有相关数据,请稍后刷新重试</string>
+    <string name="string_project_nothave_data">没有相关项目数据，点击刷新重试</string>
+    <string name="string_nothave_imagedata">没有相关图片数据</string>
+    <string name="string_connectwire_startpoint">起点</string>
+    <string name="string_connectwire_endpoint">终点</string>
+    <string name="string_batchpoint_startpoint">设为起点</string>
+    <string name="string_batchpoint_endpoint">设为终点</string>
+    <string name="string_initbaidumaping">居中已有地图点位</string>
+
+    <!--自定义输入框验证显示文字-->
+    <string name="string_validate_input_textnotcontactspecialtext">不能包括特殊字符</string>
+    <!--在任何输入情况下都适用-->
+    <string name="string_validate_input_textnotblank">不能为空</string>
+    <string name="string_validate_input_textnottolong">不能太长</string>
+    <string name="string_validate_input_numnottolong">不能太大</string>
+    <string name="string_validate_input_numnotminis1">不能小于1</string>
+    <string name="string_validate_input_numnotmaxis10">不能大于10</string>
+
+    <string name="string_validate_input_textonlynumjxhx">数字 字母 - #</string>
+
+
+    <string name="string_pickerdialog_nothavedata">无数据</string>
+
+    <string name="string_popupwindow_cancel">取消</string>
+    <string name="title_activity_changepoint">选择新的点位</string>
+    <string name="id_textview_chooselinetoedit_empty">当前屏幕范围内没有跨越线、导线/电缆</string>
+
+    <string name="string_fillsamedata_frompre">已经自动填充上一个点位数据</string>
+    <string name="clearableedittext_dialog_listview_hint">过滤条件</string>
+    <string name="string_programmeName">工程名称：</string>
+    <string name="string_projectName">项目名称：</string>
+    <string name="string_cjsj">创建时间：</string>
+    <string name="string_project_points">点位信息:</string>
+    <string name="string_project_lines">线信息:</string>
+    <string name="string_project_images">图片信息</string>
+    <string name="string_button_submitprojectdata">上传采集数据</string>
+    <string name="string_menu_submitprojectdata">上传</string>
+    <string name="string_button_localmap_download">下载</string>
+    <string name="string_button_ok">完成</string>
+    <string name="string_setting">设置</string>
+    <string name="string_cache_setting">缓存设置</string>
+    <string name="string_test">测试</string>
+    <string name="string_projectmapdataupload_service_label">项目采集数据上传服务</string>
+    <string name="string_materieldatasync_service_label">材料数据同步服务</string>
+    <string name="string_popupwindow_camera">拍照</string>
+    <string name="string_popupwindow_images">图库</string>
+    <string name="id_popupwindow_ok">确认</string>
+    <string name="string_edit_specificationnumber">规格线数</string>
+    <string name="string_checkupdate">检查更新</string>
+    <string name="string_image_nothave_data">此项目中没有相关图片数据</string>
+    <string name="string_localmap_nothave_data">没有相关离线地图数据</string>
+    <string name="string_batchline_ok">确定</string>
+    <string name="string_about">关于</string>
+    <string name="change_all">导线/电缆(批量修改)</string>
+    <string name="giveup_change">放弃(批量修改)</string>
+</resources>

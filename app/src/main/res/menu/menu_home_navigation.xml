@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/id_menu_item_home"
+            android:checkable="true"
+            android:checked="true"
+            android:icon="@drawable/ic_subtitles_black_48dp"
+            android:title="@string/title_activity_projectList" />
+     <!--   <item
+            android:id="@+id/id_menu_item_materiel_sync"
+            android:checkable="true"
+            android:icon="@drawable/ic_play_for_work_black_48dp"
+            android:title="@string/string_home_materiel_sync" />-->
+        <item
+            android:id="@+id/id_menu_item_localmap"
+            android:checkable="true"
+            android:icon="@drawable/ic_layers_black_48dp"
+            android:title="@string/string_localMap" />
+    </group>
+    <item android:title="@string/string_setting">
+        <menu>
+            <item
+                android:id="@+id/id_menu_item_loginout"
+                android:checkable="true"
+                android:icon="@drawable/ic_input_black_48dp"
+                android:title="@string/string_button_logout" />
+        </menu>
+    </item>
+
+</menu>

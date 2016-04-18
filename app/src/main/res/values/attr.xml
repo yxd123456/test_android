@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--圆形图片 自定义属性-->
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" format="dimension" />
+        <attr name="type">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ValidaterEditText">
+        <attr name="validateNoteBlank" format="boolean" />
+        <attr name="validateNotContactSpecialCharactor" format="boolean" />
+        <attr name="validateNotTextToLong" format="boolean" />
+        <attr name="validateNotNumToLong" format="boolean" />
+        <attr name="validateNotMinIs1" format="boolean" />
+        <attr name="validateNotMaxIs10" format="boolean" />
+        <attr name="validateOnlyNumJXhx" format="boolean" />
+    </declare-styleable>
+
+    <!--NumberProgressBar-->
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress_current" format="integer" />
+        <attr name="progress_max" format="integer" />
+
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+
+        <attr name="progress_text_offset" format="dimension" />
+
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="Themes">
+        <attr name="numberProgressBarStyle" format="reference" />
+    </declare-styleable>
+
+
+    <!--实现emptyView-->
+    <declare-styleable name="SuperRecyclerView">
+        <attr name="emptyView" format="reference"/>
+    </declare-styleable>
+
+
+
+    <declare-styleable name="DownLoadIndicator">
+        <attr name="circleInitColor" format="color"/>
+        <attr name="circleDownloadColor" format="color"/>
+        <attr name="circleOkColor" format="color"/>
+    </declare-styleable>
+
+</resources>

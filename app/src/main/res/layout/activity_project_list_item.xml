@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/id_imageview_leftimage"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/id_project_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@id/id_imageview_leftimage"
+        android:layout_below="@+id/id_textview_cjsj"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/id_button_previewprojectdata"
+        android:layout_toRightOf="@id/id_imageview_leftimage">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/id_textview_programmeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:singleLine="true"
+            android:text="工程名称"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/id_textview_projectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_textview_programmeName"
+            android:singleLine="true"
+            android:text="项目名称"
+            android:textSize="14sp" />
+
+        <com.hz.view.ProjectStatusView
+            android:id="@+id/id_view_projectstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_textview_projectName"
+            />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/id_textview_cjsj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/id_button_previewprojectdata"
+        android:layout_alignTop="@id/id_imageview_leftimage"
+        android:alpha="0.5"
+        android:singleLine="true"
+        android:text="创建时间"
+        android:textSize="9sp" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/id_button_previewprojectdata"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@color/content_background_color"
+        android:focusable="false"
+        android:text="@string/string_button_projectdatapreview"
+        android:textColor="?attr/colorAccent"
+        android:textSize="14sp" />
+
+</RelativeLayout>
