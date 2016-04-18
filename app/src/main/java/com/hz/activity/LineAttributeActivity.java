@@ -28,6 +28,7 @@ import com.hz.greendao.dao.WireType;
 import com.hz.greendao.dao.WireTypeDao;
 import com.hz.entity.PickerItem;
 import com.hz.util.SharedPreferencesUtils;
+import com.hz.util.okhttp_extend.FileUtil;
 import com.hz.view.ValidaterEditText;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class LineAttributeActivity extends BaseAttributeActivity {
     public static final String TAG = LineAttributeActivity.class.getSimpleName();
     public static final String LINE_NAME = "line_name";
     public static final String LINE_WIRE_TYPEID = "line_wire_typeid";
-    private MapLineEntity mapObj = null;
+    public static MapLineEntity mapObj = null;
     private ValidaterEditText mEditWireType;//点位跨越线类型
     private ValidaterEditText mEditSpecificationNumber;//规格线数
     private TextView mEditLineLength;//导线/电缆长度
@@ -52,6 +53,7 @@ public class LineAttributeActivity extends BaseAttributeActivity {
     public static final String Edit_Attribute_Note = "Edit_Attribute_Note";
     public static final String Line_Length = "Line_Length";
     public static final String Line_Specification_Number = "Line_Specification_Number";
+    public static List<MapLineItemEntity> lineItemEntityList;
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
     @Override
@@ -152,7 +154,7 @@ public class LineAttributeActivity extends BaseAttributeActivity {
         SharedPreferencesUtils.setParam(this, Line_Specification_Number, Integer.parseInt(mEditSpecificationNumber.getText().toString()));
         log("故事还在继续6："+Integer.parseInt(mEditSpecificationNumber.getText().toString()));
 
-        List<MapLineItemEntity> lineItemEntityList = new ArrayList<>();
+        lineItemEntityList = new ArrayList<>();
         for (TableRow tableRow : findElectricCableTableLayoutChildTableRow()) {
             ValidaterEditText electricCable = (ValidaterEditText) tableRow.findViewById(R.id.id_edit_electriccable_itemmode);
             AppCompatSpinner wiretypeSpinner = (AppCompatSpinner) tableRow.findViewById(R.id.id_edit_spinner_linewiretype);
@@ -217,8 +219,8 @@ public class LineAttributeActivity extends BaseAttributeActivity {
             lineItemEntityList.add(itemEntity);
         }
         Log.d("KO", lineItemEntityList.size()+" 7");
-        mapObj.setMapLineItemEntityList(lineItemEntityList);
-
+        mapObj.setMapLineItemEntityList(lineItemEntityList);//// TODO: 2016/4/18  
+        FileUtil.write(this, lineItemEntityList, "test");
         //设置bundle
         Bundle bundle = new Bundle();
         bundle.putSerializable(Constans.LINE_OBJ_KEY, mapObj);
@@ -370,7 +372,8 @@ public class LineAttributeActivity extends BaseAttributeActivity {
                 animateVeiwVisible.add(electricCable);
 
                 //修改时
-                if (mapObj.getLineEditType() == Constans.AttributeEditType.EDIT_TYPE_EDIT) {
+                if (mapObj.getLineEditType() == Constans.AttributeEditType.EDIT_TYPE_EDIT
+                        || mapObj.getLineEditType() == Constans.AttributeEditType.EDIT_TYPE_LINE_BATCHADD_C) {
                     List<MapLineItemEntity> mapLineItemEntityList = mapObj.getMapLineItemEntityList();
                     if (mapLineItemEntityList != null && mapLineItemEntityList.size() > 0) {
                         for (MapLineItemEntity lineItemEntity : mapLineItemEntityList) {

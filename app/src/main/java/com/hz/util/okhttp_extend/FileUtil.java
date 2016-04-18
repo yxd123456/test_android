@@ -18,10 +18,10 @@ import java.util.List;
  */
 public class FileUtil {
 
-    public static void write(Context context, List list){
+    public static void write(Context context, List list, String fileName){
         ObjectOutputStream oos = null;
       try {
-          FileOutputStream fileOutputStream = context.openFileOutput("xxx", context.MODE_PRIVATE);
+          FileOutputStream fileOutputStream = context.openFileOutput(fileName, context.MODE_WORLD_WRITEABLE);
           oos = new ObjectOutputStream(fileOutputStream);
           oos.writeObject(list);
       } catch (FileNotFoundException e) {
@@ -37,11 +37,11 @@ public class FileUtil {
       }
   }
 
-  public static List read(Context context){
+  public static List read(Context context, String fileName){
       ObjectInputStream ois = null;
       List list = null;
       try {
-          FileInputStream fileInputStream = context.openFileInput("xxx");
+          FileInputStream fileInputStream = context.openFileInput(fileName);
           ois = new ObjectInputStream(fileInputStream);
           list = (List) ois.readObject();
       } catch (FileNotFoundException e) {

@@ -49,6 +49,7 @@ import com.hz.helper.MapIconHelper;
 import com.hz.helper.SharedPreferencesHelper;
 import com.hz.sensor.listener.OrientationEventListener;
 import com.hz.util.SharedPreferencesUtils;
+import com.hz.util.okhttp_extend.FileUtil;
 import com.hz.view.PopupToast;
 
 import java.io.Serializable;
@@ -127,6 +128,7 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
     //private List<MapLineEntity> tempLineEntityList;
     //private MapLineEntity entity;
     private List<MapLineEntity> tempLineEntityList;
+    private List<MapLineItemEntity>  list;
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
     @Override//-->initComponents();
@@ -179,10 +181,10 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
 
                         if(flag_change){
                             flag_change = false;
-                            BaseActivity.list_id.clear();
+                            getListId().clear();
                             list_new_mle.clear();
                             list_polyline.clear();
-                            list_id.clear();
+                            getListId().clear();
                             tempLineEntityList.clear();
                         }
                         FLAG_DELETE_SELECT = false;
@@ -207,15 +209,7 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
 
                         addMapLines();
 
-                        if(flag_change){
-                            flag_change = false;
-                            BaseActivity.list_id.clear();
-                            list_new_mle.clear();
-                            list_polyline.clear();
-                            list_id.clear();
-                            tempLineEntityList.clear();
-                        }
-                        FLAG_DELETE_SELECT = false;
+
                         uiHandler.post(new Runnable() {
                             @Override
                             public void run() {
@@ -224,6 +218,17 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
                                 postToRemoveProgressHud();
                             }
                         });
+
+                        if(flag_change){
+                            flag_change = false;
+                              getListId().clear();
+//                            list_new_mle.clear();
+//                            list_polyline.clear();
+//                            getListId().clear();
+//                            tempLineEntityList.clear();
+                        }
+                        FLAG_DELETE_SELECT = false;
+
                         break;
                 }
 
@@ -398,9 +403,10 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
                 Log.d("Do", "id_button_batchline_ok");
                 if(flag_change){
                     // TODO: 2016/4/18 选中多条线段
-                    //list_mle.get(0).setLineEditType(Constans.AttributeEditType.EDIT_TYPE_LINE_BATCHADD_C);
+
                     list_mle.get(0).getMapLineItemEntityList();
-                    list_mle.get(0).setLineEditType(Constans.AttributeEditType.EDIT_TYPE_EDIT);
+                    list_mle.get(0).setLineEditType(Constans.AttributeEditType.EDIT_TYPE_LINE_BATCHADD_C);
+                    //list_mle.get(0).setLineEditType(Constans.AttributeEditType.EDIT_TYPE_EDIT);
                     //list_mle.get(0).setLineType(Constans.MapAttributeType.WIRE_ELECTRIC_CABLE);//导线.电缆
                     toEditLineAttributeActivity(list_mle.get(0));
                    /* entity.getMapLineItemEntityList();
@@ -601,7 +607,7 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
 
         if(flag_change){
             // TODO: 2016/4/13
-            String tag = UUID.randomUUID().toString();
+            String tag = random();
             DataBaseManagerHelper.getInstance().removeLineByLineId(entity.getLineId());
             entity.setLineId(tag);
             DataBaseManagerHelper.getInstance().addOrUpdateOneLineToDb(entity);
@@ -929,25 +935,30 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
             if (list_new_mle != null && list_new_mle.size() != 0) {
                 log("KO", "?2");
                 for (MapLineEntity lineEntity : tempLineEntityList) {
-                    log("KO", lineEntity.getLineId() + "********************************");
-                    for (String tag : BaseActivity.list_id) {
-                        log("KO", tag + "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+                    for (String tag : getListId()) {
                         if (lineEntity.getLineId().equals(tag)) {// TODO: 修改所选线条的信息
                             String lineName = (String) SharedPreferencesUtils.getParam(MainActivity.this, LineAttributeActivity.LINE_NAME, list_new_mle.get(0).getLineName());
-                            log("KO", lineName + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                            // TODO: 更新规格线数
                             int Line_Specification_Number = (int) SharedPreferencesUtils.getParam(MainActivity.this, LineAttributeActivity.Line_Specification_Number, list_new_mle.get(0).getLineSpecificationNumber());
-                            log("dddddddddddddddd"+Line_Specification_Number);
+
                             lineEntity.setLineSpecificationNumber(Line_Specification_Number);
                             lineEntity.setLineName(lineName);
-                            List<MapLineItemEntity> mapLineItemEntityList = lineEntity.getMapLineItemEntityList();
-                            if (mapLineItemEntityList != null && mapLineItemEntityList.size() > 0) {
-                                for (MapLineItemEntity lineItemEntity : mapLineItemEntityList) {
 
+                            list = FileUtil.read(this, "test");
+
+                            if(list != null || list.size() != 0){
+                                log("KOO", "*********** "+(list != null));
+                                log("KOO", "*********** "+(list.size() != 0));
+
+                                for (MapLineItemEntity itemEntity: list) {
+                                        Log.d("KOO", itemEntity.getLineItemWireType()+"  1");
+                                        Log.d("KOO", itemEntity.getLineItemModeId()+"    2");
+                                        Log.d("KOO", itemEntity.getLineItemNum()+"   3");
+                                        Log.d("KOO", itemEntity.getLineItemId()+"    4");
+                                        Log.d("KOO", itemEntity.getLineItemStatus()+"    5");
+                                        Log.d("KOO", itemEntity.getLineItemRemoved()+"   6");
                                 }
+                                lineEntity.setMapLineItemEntityList(list);
                             }
-
-
                             if (flag_change) {
                                 DataBaseManagerHelper.getInstance().removeLineByLineId(lineEntity.getLineId());
                             }
@@ -976,7 +987,10 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
                     addCrossLinePoints(lineEntity);
                     break;
                 case Constans.MapAttributeType.WIRE_ELECTRIC_CABLE://导线电缆
+
                     color = convertLineColorByLineItems(lineEntity.getMapLineItemEntityList());
+                    //color = convertLineColorByLineItems(list);
+
                     text = Constans.DECIMALFORMAT_M.format(DistanceUtil.getDistance(startLatlong, endLatlong));
                     break;
             }
@@ -1086,34 +1100,7 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
         intent.putExtras(bundle);
         startActivityForResult(intent, Constans.RequestCode.LINE_ATTRIBUTE_EDIT_REQUESTCODE);
     }
-    public void toEditLineAttributeActivity(ArrayList<MapLineEntity> list) {
-        //修改导线/电缆属性时 如果是重复添加的 则修改
-        for (MapLineEntity mapLineEntity:list
-             ) {
-            if (mapLineEntity.getLineEditType() == Constans.AttributeEditType.EDIT_TYPE_ADD && mapLineEntity.getLineType() == Constans.MapAttributeType.WIRE_ELECTRIC_CABLE) {
-                //如果两点之间已经有一条线
-                MapLineEntity lineEntity = DataBaseManagerHelper.getInstance().getLineByLineStartPointIdAndEndPointId(mapLineEntity.getLineStartPointId(), mapLineEntity.getLineEndPointId());
-                if (lineEntity != null) {
-                    lineEntity.getMapLineItemEntityList();//查询线关联的线item信息
-                    mapLineEntity = lineEntity;
-                    mapLineEntity.setLineEditType(Constans.AttributeEditType.EDIT_TYPE_EDIT);
-                }
-            }
-        }
-        for (MapLineEntity mapLineEntity:list
-             ) {
-            mapLineEntity.setLineProjId(currentProjectId);
-            mapLineEntity.setLineUserId(SharedPreferencesHelper.getUserId(this));
-        }
 
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(Constans.LINE_OBJ_KEY_TEST, list_mle);
-        Intent intent = new Intent(this, LineAttributeActivity.class);
-        //传入项目数据
-        bundle.putSerializable(ProjectListFragment.PROJECT_OBJ_KEY, projectEntity);
-        intent.putExtras(bundle);
-        startActivityForResult(intent, Constans.RequestCode.LINE_ATTRIBUTE_EDIT_REQUESTCODE);
-    }
     /**
      * 打开新的activity页面选择点位属性
      * @param bundle        传入点位编辑activity的参数
@@ -1268,7 +1255,7 @@ public class MainActivity extends BaseMapActivity implements View.OnClickListene
                 log("KO", "计划B");
                     for (MapLineEntity line : tempLineEntityList) {
                         log("KO", line.getLineId()+"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-                        for (String tag : BaseActivity.list_id){
+                        for (String tag : getListId()){
                             log("KO", tag + "***************************");
                             if(line.getLineId().equals(tag)){
                                 DataBaseManagerHelper.getInstance().removeLineByLineId(line.getLineId());

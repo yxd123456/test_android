@@ -1,5 +1,6 @@
 package com.hz.greendao.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.greenrobot.dao.DaoException;
@@ -59,7 +60,7 @@ public class MapLineEntity implements java.io.Serializable {
      */
     private transient MapLineEntityDao myDao;
 
-    private List<MapLineItemEntity> mapLineItemEntityList;
+    private List<MapLineItemEntity> mapLineItemEntityList = new ArrayList<>();
 
     // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END
@@ -327,7 +328,7 @@ public class MapLineEntity implements java.io.Serializable {
     // KEEP METHODS - put your custom methods here
 
     public void setMapLineItemEntityList(List<MapLineItemEntity> mapLineItemEntityList) {
-        this.mapLineItemEntityList = mapLineItemEntityList;
+        this.mapLineItemEntityList.addAll(mapLineItemEntityList);
     }
 
     public List<MapLineItemEntity> getMapLineItemEntityList2() {

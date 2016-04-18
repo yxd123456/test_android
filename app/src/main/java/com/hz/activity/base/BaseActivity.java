@@ -1,5 +1,6 @@
 package com.hz.activity.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.StringRes;
@@ -15,9 +16,11 @@ import com.hz.debug.hv.ViewServer;
 import com.hz.greendao.dao.DaoSession;
 import com.hz.util.PackageUtil;
 import com.hz.util.WindowsUtil;
+import com.hz.util.okhttp_extend.FileUtil;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * activity 基类
@@ -27,13 +30,16 @@ public class BaseActivity extends AppCompatActivity {
     public static final String TAG = BaseActivity.class.getSimpleName();
     public boolean useTranslucentStatusAndNavigation = false;//设置是否使用导航栏透明显示,设置此属性必须在super.onCreate()方法之前
     private Toolbar mMDToolBar;//Material Design 全局工具条
-    public static ArrayList<String> list_id = new ArrayList<>();
+    private static List<String> list_id = new ArrayList<>();
     private int num = 0;
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FileUtil.write(this, list_id, "listId");
+
         Log.d("Test", "当前的Activity是"+getClass().getSimpleName());
         if (useTranslucentStatusAndNavigation) {
             WindowsUtil.setTranslucentStatusAndNavigation(this);
@@ -79,8 +85,13 @@ public class BaseActivity extends AppCompatActivity {
         Log.d("Point", (num++)+"");
     }
 
+    public List<String> getListId(){
+        return FileUtil.read(this, "listId");
+    }
+
     public void addId(String str){
         list_id.add(str);
+        FileUtil.write(this, list_id, "listId");
     }
 
     public void removeAll(){
